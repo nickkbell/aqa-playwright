@@ -25,9 +25,7 @@ test.describe('validate registration form - negative cases', () => {
         await registrationForm.openSignUpForm();
     });
 
-    for (const item of signUpFormNegativeCases) {
-        const { description, modifyData, field, errorText, focus, unFocus } = item;
-
+    for (const { description, modifyData, field, errorText, focus, unFocus } of signUpFormNegativeCases) {
         test(description, async ({ page }) => {
             modifyData(wrongData);
 

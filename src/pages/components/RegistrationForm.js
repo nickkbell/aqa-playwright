@@ -1,6 +1,4 @@
 class RegistrationForm {
-    static nameField = 'input#signupName';
-
     constructor (page) {
         this.page = page;
     }
