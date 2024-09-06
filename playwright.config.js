@@ -1,4 +1,5 @@
 // @ts-check
+import 'dotenv/config';
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
@@ -26,10 +27,10 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-    baseURL: 'https://qauto.forstudy.space/',
+    baseURL: process.env.BASE_URL,
     httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto'
+      username: process.env.HTTP_CREDENTIALS_USERNAME,
+      password: process.env.HTTP_CREDENTIALS_PASSWORD
     },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
