@@ -1,6 +1,7 @@
 // @ts-check
 import 'dotenv/config';
-const { defineConfig, devices } = require('@playwright/test');
+import {defineConfig, devices} from '@playwright/test';
+import {AUTH_FILE_PATH} from './src/constants';
 
 /**
  * Read environment variables from file.
@@ -38,19 +39,33 @@ module.exports = defineConfig({
   timeout: 30000,
   /* Configure projects for major browsers */
   projects: [
+    { name: 'setup', testMatch: /.*\.setup\.js/ },
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: AUTH_FILE_PATH
+      },
+      dependencies: ['setup']
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        ...devices['Desktop Firefox'],
+        storageState: AUTH_FILE_PATH
+      },
+      dependencies: ['setup']
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: {
+        ...devices['Desktop Safari'],
+        storageState: AUTH_FILE_PATH
+      },
+      dependencies: ['setup']
     },
 
     /* Test against mobile viewports. */

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import RegistrationForm from '../src/pages/components/RegistrationForm';
 import {validUserData} from '../src/constants';
-import {signUpFormNegativeCases} from '../src/fixtures';
+import {signUpFormNegativeCases} from '../src/testData';
 
 
 test('register user with valid data', async ({ page }) => {
