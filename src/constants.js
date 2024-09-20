@@ -5,3 +5,5 @@ export const validUserData = {
     password: 'Password123!',
     reEnterPassword: 'Password123!'
 };
+
+export const AUTH_FILE_PATH = '.auth/session_user.json';
