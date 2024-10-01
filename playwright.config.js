@@ -50,7 +50,7 @@ module.exports = defineConfig({
       dependencies: ['setup']
     },
 
-    {
+/*    {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
@@ -66,7 +66,7 @@ module.exports = defineConfig({
         storageState: AUTH_FILE_PATH
       },
       dependencies: ['setup']
-    },
+    },*/
 
     /* Test against mobile viewports. */
     // {

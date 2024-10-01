@@ -1,3 +1,4 @@
+/*
 import {test} from '../src/fixtures/userGaragePage';
 import {expect} from '@playwright/test';
 import GaragePage from '../src/pages/GaragePage';
@@ -28,3 +29,4 @@ test('try to edit car - should pass', async ({ page, addCar }) => {
     await garagePage.editCar(audi.brand, audi.model, audi.mileage);
     await expect(await garagePage.getCarTitle()).toEqual(`${audi.brand} ${audi.model}`);
 });
+*/

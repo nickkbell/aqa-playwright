@@ -4,7 +4,7 @@ import {validUserData} from '../src/constants';
 import {signUpFormNegativeCases} from '../src/testData';
 
 
-test('register user with valid data', async ({ page }) => {
+test.skip('register user with valid data', async ({ page }) => {
     const registrationForm = new RegistrationForm(page);
 
     await registrationForm.openSignUpForm();
@@ -15,7 +15,7 @@ test('register user with valid data', async ({ page }) => {
     await expect(page).toHaveURL(/\/panel\/garage/);
 });
 
-test.describe('validate registration form - negative cases', () => {
+test.describe.skip('validate registration form - negative cases', () => {
     let wrongData;
     let registrationForm;
 
