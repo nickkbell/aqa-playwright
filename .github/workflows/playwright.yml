@@ -30,7 +30,8 @@ jobs:
         run: docker build -t playwright-tests .
 
       - name: Run Playwright tests in Docker
-        run: docker run --rm
+        run: |
+          docker run --rm \
           -e BASE_URL=${{ secrets.BASE_URL }} \
           -e HTTP_CREDENTIALS_USERNAME=${{ secrets.HTTP_CREDENTIALS_USERNAME }} \
           -e HTTP_CREDENTIALS_PASSWORD=${{ secrets.HTTP_CREDENTIALS_PASSWORD }} \
